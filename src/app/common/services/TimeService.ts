@@ -10,6 +10,8 @@ export class TimeService {
       this.time += 1;
       this.onTimeChange.emit ('');
     }, 1000);
+
+    console.log ('SJA: TimeService object was created');
   }
 
 }

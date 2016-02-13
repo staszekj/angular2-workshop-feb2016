@@ -8,6 +8,7 @@ export class TemperatureStorageService {
 
   constructor() {
     this.temperatures = [];
+    console.log ('SJA: TemperatureStorageService object was created');
   }
 
   addTemperature(cityName, temperature) {
