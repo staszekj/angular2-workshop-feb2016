@@ -2,6 +2,7 @@
 
 $(function () {
 
+  /*
   // Area Chart
   Morris.Area({
     element: 'morris-area-chart',
@@ -64,7 +65,6 @@ $(function () {
     resize: true
   });
 
-  /*
    // Donut Chart
    Morris.Donut({
    element: 'morris-donut-chart',
