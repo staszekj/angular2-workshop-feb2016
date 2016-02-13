@@ -26,10 +26,7 @@ export class CityInfoPanel {
     this.cityInformations = [
       new CityInformationFactory ('Magic City of Time',
         this.timeService.time,
-        this.timeService.time),
-      new CityInformationFactory ('Second City',
-        100,
-        200)
+        this.timeService.time)
     ];
 
   }
@@ -39,8 +36,23 @@ export class CityInfoPanel {
       this.cityInformations[0].temperature = this.timeService.time;
       this.cityInformations[0].wind = this.timeService.time % 10;
     });
+  }
 
-    this.temperatureStorageService.addTemperature ('Krakow', 20);
-    this.temperatureStorageService.addTemperature ('Katowice', 22);
+  onClick() {
+    this.cityInformationService.cityInformation (this.city)
+      .subscribe ((cityInformation) => {
+        this.addCityInformation (cityInformation);
+        this.temperatureStorageService.addTemperature (cityInformation.name,
+          cityInformation.temperature);
+      }, (e) => {
+        console.log ('Error occured: ', JSON.stringify (e));
+      });
+  }
+
+  private addCityInformation(cityInformation: CityInformationFactory) {
+    let newCityInformation = new CityInformationFactory (cityInformation.name,
+      cityInformation.temperature,
+      cityInformation.wind);
+    this.cityInformations.push (newCityInformation);
   }
 }
