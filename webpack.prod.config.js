@@ -103,9 +103,10 @@ module.exports = {
       { test: /\.css$/,   loader: 'raw-loader' },
 
       // support for .html as raw text
-      { test: /\.html$/,  loader: 'raw-loader', exclude: [ root('src/index.html') ] }
+      {test: /\.html$/, loader: 'raw-loader', exclude: [root('src/index.html')]},
 
-      // if you add a loader include the file extension
+      //expose jquery
+      {test: require.resolve("jquery"), loader: "expose?$!expose?jQuery"}
     ]
   },
 
@@ -121,12 +122,12 @@ module.exports = {
     // static assets
     new CopyWebpackPlugin([
       {
-        from: 'src/assets',
-        to: 'assets'
+        from: 'src/template',
+        to: 'template'
       }
     ]),
     // generating html
-    new HtmlWebpackPlugin({ template: 'src/index.html' }),
+    new HtmlWebpackPlugin({template: 'src/index.html', inject: 'head'}),
     new DefinePlugin({
       // Environment helpers
       'process.env': {
