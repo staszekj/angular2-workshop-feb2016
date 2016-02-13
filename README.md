@@ -24,6 +24,13 @@ npm install
 npm start
 ```
 
+## Build
+
+```bash
+# Prepare `dist` directory 
+npm run build
+```
+
 ## Run tests
 
 ```bash
