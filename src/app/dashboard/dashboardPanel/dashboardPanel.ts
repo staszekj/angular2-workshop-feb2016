@@ -1,5 +1,4 @@
-import {Component, provide} from 'angular2/core';
-import {Http} from 'angular2/http';
+import {Component} from 'angular2/core';
 
 import {TimeDataFactory} from './factories/TimeDataFactory';
 
@@ -16,7 +15,6 @@ import {DashboardService} from './services/DashboardService';
   template: require ('./template/dashboardPanel.html')
 })
 export class DashboardPanel {
-
   constructor(private dashboardService: DashboardService) {
 
   }
@@ -24,9 +22,4 @@ export class DashboardPanel {
   ngOnInit() {
 
   }
-
-  //ngDoCheck() {
-  //
-  //}
-
 }

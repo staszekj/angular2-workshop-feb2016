@@ -5,6 +5,7 @@ import {DashboardService} from './dashboard/dashboardPanel/services/DashboardSer
 
 import {MenuPanel} from './widgets/menu/menuPanel/MenuPanel';
 import {DashboardPanel} from './dashboard/dashboardPanel/DashboardPanel';
+import {CityInfoPanel} from './cityInfo/cityInfoPanel/CityInfoPanel';
 
 /*
  * App Component
@@ -24,6 +25,7 @@ import {DashboardPanel} from './dashboard/dashboardPanel/DashboardPanel';
 @RouteConfig ([
   {path: '/', component: DashboardPanel, name: 'Dashboard'},
   {path: '/dashboard', component: DashboardPanel, name: 'Dashboard'},
+  {path: '/city-info', component: CityInfoPanel, name: 'CityInfo'},
   {path: '/**', redirectTo: ['Dashboard']}
 ])
 export class App {
