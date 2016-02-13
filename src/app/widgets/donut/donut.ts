@@ -21,7 +21,6 @@ export class Donut {
   }
 
   ngOnChanges(changes) {
-    console.log ('Changes: ', changes);
     if (changes.time) {
       this.timeToDisplay = changes.time.currentValue;
     }

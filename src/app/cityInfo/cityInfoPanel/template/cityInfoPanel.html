@@ -4,7 +4,44 @@
       <div class="panel-heading">
         <h3 class="panel-title"><i class="fa fa-long-arrow-right fa-fw"></i> City Info </h3>
       </div>
-      <div class="panel-body dashboard-panel">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-xs-6">
+            <label for="city">City name:</label>
+            <input id="city" [(ngModel)]="city" type="text"/>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Last searched city informations </h3>
+              </div>
+              <div class="panel-body">
+                <div class="table-responsive">
+                  <table class="table table-bordered table-hover table-striped">
+                    <thead>
+                    <tr>
+                      <th>City Name</th>
+                      <th>Temperature [F]</th>
+                      <th>Wind [mph]</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!--<template ngFor #item [ngForOf]="items" #i="index"><tr>-->
+                    <tr *ngFor="#cityInformation of cityInformations; #i = index">
+                      <td>{{cityInformation.name}}</td>
+                      <td>{{cityInformation.temperature}}</td>
+                      <td>{{cityInformation.wind}}</td>
+                    </tr>
+                    <!--</tr></template>-->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
