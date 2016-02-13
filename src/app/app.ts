@@ -8,6 +8,8 @@ import {FORM_PROVIDERS} from 'angular2/common';
 import {RouterActive} from './directives/router-active';
 import {Home} from './home/home';
 
+let sharedJQuery = require ('jquery');
+
 /*
  * App Component
  * Top Level Component
@@ -70,11 +72,11 @@ import {Home} from './home/home';
   { path: '/**', redirectTo: ['Index'] }
 ])
 export class App {
-  angularclassLogo = 'assets/img/angularclass-avatar.png';
+  angularclassLogo = '';
   name = 'Angular 2 Webpack Starter';
   url = 'https://twitter.com/AngularClass';
   constructor() {
-
+    console.log (sharedJQuery);
   }
 }
 

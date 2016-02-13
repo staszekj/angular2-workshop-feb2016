@@ -63,9 +63,10 @@ module.exports = {
       { test: /\.css$/,   loader: 'raw-loader' },
 
       // support for .html as raw text
-      { test: /\.html$/,  loader: 'raw-loader', exclude: [ root('src/index.html') ] }
+      {test: /\.html$/, loader: 'raw-loader', exclude: [root('src/index.html')]},
 
-      // if you add a loader include the resolve file extension above
+      //expose jquery
+      {test: require.resolve("jquery"), loader: "expose?$!expose?jQuery"}
     ]
   },
 
@@ -73,9 +74,9 @@ module.exports = {
     new webpack.optimize.OccurenceOrderPlugin(true),
     new webpack.optimize.CommonsChunkPlugin({ name: 'polyfills', filename: 'polyfills.bundle.js', minChunks: Infinity }),
     // static assets
-    new CopyWebpackPlugin([ { from: 'src/assets', to: 'assets' } ]),
+    new CopyWebpackPlugin([{from: 'src/template', to: 'template'}]),
     // generating html
-    new HtmlWebpackPlugin({ template: 'src/index.html' }),
+    new HtmlWebpackPlugin({template: 'src/index.html', inject: 'head'}),
     // replace
     new webpack.DefinePlugin({
       'process.env': {
