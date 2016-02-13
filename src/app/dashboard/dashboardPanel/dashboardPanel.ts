@@ -1,5 +1,7 @@
 import {Component} from 'angular2/core';
 
+import {TimeDataFactory} from './factories/TimeDataFactory';
+
 import {DashboardService} from './services/DashboardService';
 import {TimeService} from '../../common/services/TimeService';
 import {TemperatureStorageService} from '../../common/services/TemperatureStorageService';
@@ -18,19 +20,19 @@ import {Donut} from '../../widgets/donut/donut';
 })
 export class DashboardPanel {
   private time: number;
-  //private timeData: TimeDataFactory;
+  private timeData: TimeDataFactory;
 
   constructor(private dashboardService: DashboardService,
               private timeService: TimeService,
               private temperatureStorageService: TemperatureStorageService) {
     this.time = this.timeService.time;
-    //this.timeData = new TimeDataFactory(this.timeService.time);
+    this.timeData = new TimeDataFactory (this.timeService.time);
   }
 
   ngOnInit() {
     this.timeService.onTimeChange.subscribe (() => {
       this.time = this.timeService.time;
-      //this.timeData = new TimeDataFactory(this.timeService.time);
+      this.timeData = new TimeDataFactory (this.timeService.time);
     });
   }
 
