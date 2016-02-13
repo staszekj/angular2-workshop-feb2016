@@ -30,6 +30,12 @@ export class Donut {
   ngOnInit() {
   }
 
+  /*
+   ngDoCheck(){
+
+   }
+   */
+
   onClick($event) {
     this.onTimeResetClick.emit ('RESET_BUTTON_CLICKED');
     $event.stopPropagation ();
