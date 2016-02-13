@@ -23,6 +23,10 @@
   <!-- Custom Fonts -->
   <link href="template/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.1/magnific-popup.min.css" rel="stylesheet"
+        type="text/css">
+
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -35,6 +39,18 @@
 <body>
 
 <div id="wrapper">
+
+  <a class="image-popup-vertical-fit" href="http://farm9.staticflickr.com/8241/8589392310_7b6127e243_b.jpg"
+     title="Caption. Can be aligned to any side and contain any HTML.">
+    <img src="http://farm9.staticflickr.com/8241/8589392310_7b6127e243_s.jpg" width="75" height="75">
+  </a>
+  <a class="image-popup-fit-width" href="http://farm9.staticflickr.com/8379/8588290361_ecf8c27021_b.jpg"
+     title="This image fits only horizontally.">
+    <img src="http://farm9.staticflickr.com/8379/8588290361_ecf8c27021_s.jpg" width="75" height="75">
+  </a>
+  <a class="image-popup-no-margins" href="http://farm4.staticflickr.com/3721/9207329484_ba28755ec4_o.jpg">
+    <img src="http://farm4.staticflickr.com/3721/9207329484_ba28755ec4_o.jpg" width="107" height="75">
+  </a>
 
   <app></app>
 
@@ -490,6 +506,9 @@
 <script src="template/js/plugins/morris/raphael.min.js"></script>
 <script src="template/js/plugins/morris/morris.min.js"></script>
 <script src="template/js/plugins/morris/morris-data.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.1/jquery.magnific-popup.min.js"></script>
+
 
 <% if (webpackConfig.metadata.ENV === 'development') { %>
 <!-- Webpack Dev Server reload -->
