@@ -1,8 +1,8 @@
 import {Component} from 'angular2/core';
 
-import {TimeDataFactory} from './factories/TimeDataFactory';
-
 import {DashboardService} from './services/DashboardService';
+import {TimeService} from '../../common/services/TimeService';
+import {TemperatureStorageService} from '../../common/services/TemperatureStorageService';
 
 @Component ({
   selector: 'dashboard',
@@ -15,11 +15,19 @@ import {DashboardService} from './services/DashboardService';
   template: require ('./template/dashboardPanel.html')
 })
 export class DashboardPanel {
-  constructor(private dashboardService: DashboardService) {
+  constructor(private dashboardService: DashboardService,
+              private timeService: TimeService,
+              private temperatureStorageService: TemperatureStorageService) {
 
   }
 
   ngOnInit() {
+    this.timeService.onTimeChange.subscribe (() => {
+      let currentTime = this.timeService.time;
+      this.temperatureStorageService.addTemperature ('Krakow', currentTime);
+      console.log ('Current time', this.timeService.time);
+    });
 
   }
+
 }
