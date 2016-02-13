@@ -42,3 +42,9 @@ npm test
 ## Go
 go to [http://localhost:3000](http://localhost:3000) in your browser
 
+## Links
+
+<a href="http://workshop.eltrue.com" target="_blank">Working application</a>  
+<br>
+<a href="https://docs.google.com/forms/d/1F5p51L3odByLJFABuBEmI8srDlO-7jND6jX8hOYrarg/viewform?c=0&w=1&usp=mail_form_link" target="_blank">Please fill in survey after workshop</a>
+
