@@ -1,8 +1,6 @@
 import {Component, provide} from 'angular2/core';
 import {RouteConfig, Router, ROUTER_DIRECTIVES} from 'angular2/router';
 
-import {DashboardService} from './dashboard/dashboardPanel/services/DashboardService';
-
 import {MenuPanel} from './widgets/menu/menuPanel/MenuPanel';
 import {DashboardPanel} from './dashboard/dashboardPanel/DashboardPanel';
 
@@ -12,7 +10,7 @@ import {DashboardPanel} from './dashboard/dashboardPanel/DashboardPanel';
  */
 @Component ({
   selector: 'app',
-  providers: [DashboardService],
+  providers: [],
   directives: [...ROUTER_DIRECTIVES, MenuPanel],
   pipes: [],
   styles: [],
