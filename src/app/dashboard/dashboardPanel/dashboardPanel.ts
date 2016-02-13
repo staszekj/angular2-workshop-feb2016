@@ -1,19 +1,21 @@
 import {Component} from 'angular2/core';
+import {RouterLink} from 'angular2/router';
 
 import {TimeDataFactory} from './factories/TimeDataFactory';
+import {Donut} from '../../widgets/donut/donut';
+import {DonutFragmentFactory} from '../../widgets/donut/factories/donutFragmentFactory';
 
 import {DashboardService} from './services/DashboardService';
 import {TimeService} from '../../common/services/TimeService';
 import {TemperatureStorageService} from '../../common/services/TemperatureStorageService';
 
-import {Donut} from '../../widgets/donut/donut';
 
 @Component ({
   selector: 'dashboard',
   providers: [
     DashboardService
   ],
-  directives: [Donut],
+  directives: [Donut, RouterLink],
   pipes: [],
   styles: [require ('./template/dashboardPanel.css')],
   template: require ('./template/dashboardPanel.html')
@@ -21,6 +23,7 @@ import {Donut} from '../../widgets/donut/donut';
 export class DashboardPanel {
   private time: number;
   private timeData: TimeDataFactory;
+  private donutFragments: Array<DonutFragmentFactory>;
 
   constructor(private dashboardService: DashboardService,
               private timeService: TimeService,
@@ -34,6 +37,9 @@ export class DashboardPanel {
       this.time = this.timeService.time;
       this.timeData = new TimeDataFactory (this.timeService.time);
     });
+
+    this.donutFragments = this.dashboardService.toDonutData (
+      this.temperatureStorageService.temperatures);
   }
 
   onTimeReset($event) {

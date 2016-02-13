@@ -1,6 +1,7 @@
 import {Component, Input, Output, EventEmitter} from 'angular2/core';
 
 import {TimeDataFactory} from '../../dashboard/dashboardPanel/factories/TimeDataFactory';
+import {DonutFragmentFactory} from './factories/donutFragmentFactory';
 
 
 @Component ({
@@ -15,7 +16,9 @@ export class Donut {
   @Input () time;
   @Input () timeData: TimeDataFactory;
   @Output () onTimeResetClick = new EventEmitter<any> ();
+  @Input () donutFragments: Array<DonutFragmentFactory>;
   public timeToDisplay: number;
+  private donutMorrisWidget;
 
   constructor() {
   }
@@ -27,6 +30,12 @@ export class Donut {
   };
 
   ngOnInit() {
+    let morris = window['Morris'];
+    this.donutMorrisWidget = morris.Donut ({
+      element: 'dashboard-donut-chart',
+      data: this.donutFragments,
+      resize: true
+    });
   }
 
   /*

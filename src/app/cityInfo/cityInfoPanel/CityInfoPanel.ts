@@ -39,5 +39,8 @@ export class CityInfoPanel {
       this.cityInformations[0].temperature = this.timeService.time;
       this.cityInformations[0].wind = this.timeService.time % 10;
     });
+
+    this.temperatureStorageService.addTemperature ('Krakow', 20);
+    this.temperatureStorageService.addTemperature ('Katowice', 22);
   }
 }
