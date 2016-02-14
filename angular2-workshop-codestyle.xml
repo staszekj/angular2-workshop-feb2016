@@ -1,0 +1,12 @@
+<code_scheme name="angular2-workshop-codestyle">
+  <TypeScriptCodeStyleSettings>
+    <option name="SPACE_AFTER_TYPE_COLON" value="true"/>
+    <option name="USE_DOUBLE_QUOTES" value="false"/>
+  </TypeScriptCodeStyleSettings>
+  <XML>
+    <option name="XML_LEGACY_SETTINGS_IMPORTED" value="true"/>
+  </XML>
+  <codeStyleSettings language="TypeScript">
+    <option name="SPACE_BEFORE_METHOD_CALL_PARENTHESES" value="true"/>
+  </codeStyleSettings>
+</code_scheme>
