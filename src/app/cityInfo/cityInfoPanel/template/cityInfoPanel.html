@@ -6,14 +6,68 @@
       </div>
       <div class="panel-body">
         <div class="row">
-          <div class="col-xs-6">
-            <label for="city">City name:</label>
-            <input id="city" [(ngModel)]="city" type="text"/>
-          </div>
-        </div>
-        <div class="row result-row">
-          <div class="col-xs-12 text-center">
-            <button class="btn btn-default" (click)="onClick()">Check Weather</button>
+          <div class="col-xs-12">
+            <div class="panel">
+              <div class="panel-body">
+                <!--
+                    Quick introduction to Angular 2 Form Validation
+                    https://medium.com/@daviddentoom/angular-2-form-validation-9b26f73fcb81
+                    For detailed reference read this blog entry
+                    http://blog.ng-book.com/the-ultimate-guide-to-forms-in-angular-2/
+                -->
+                <form role="form"
+                      [ngFormModel]="cityInformationForm"
+                      (ngSubmit)="onSubmit(cityInformationForm.value)">
+                  <div class="form-group"
+                       [class.has-error]="isInvalid(cityNameControl)">
+                    <label for="city-name">
+                      City name:
+                    </label>
+                    <input id="city-name"
+                           class="form-control"
+                           type="text"
+                           placeholder="... enter city name"
+                           required
+                           [ngFormControl]="cityNameControl"
+                           [(ngModel)]="city">
+                    <div class="alert alert-info"
+                         *ngIf="cityNameControl.pending">
+                      <strong>City existence validation in progress...</strong>
+                    </div>
+                  </div>
+                  <div class="alert alert-danger"
+                       *ngIf="isInvalid(cityInformationForm)">
+                    <strong>The form is invalid</strong>, please correct following errors.
+                    <ul>
+                      <li *ngIf="cityNameControl.hasError('startsWithNumber')">
+                        City name can't start with a number.
+                      </li>
+                      <li *ngIf="cityNameControl.hasError('containsSpecialCharacters')">
+                        City name must contain only letters.
+                      </li>
+                      <li *ngIf="cityNameControl.hasError('required')">
+                        City name can't be empty.
+                      </li>
+                      <li *ngIf="cityNameControl.errors.cityDoesNotExist">
+                        Provided city: <strong>{{cityNameControl.value}}</strong> does not
+                        exist.
+                      </li>
+                    </ul>
+                    <!--
+                        See sample demonstrating how to extract error message component
+                        https://github.com/angular/angular/blob/57496926cad0d840092c7623079883983ca07d53/modules/examples/src/model_driven_forms/index.ts
+                    -->
+                  </div>
+                  <div class="text-center">
+                    <button type="submit"
+                            class="btn btn-default"
+                            [disabled]="!cityInformationForm.valid">
+                      Get weather information
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
         <div class="row">
