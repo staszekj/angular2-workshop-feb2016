@@ -1,5 +1,6 @@
 import {Component, Input} from 'angular2/core';
-import {FORM_DIRECTIVES, FormBuilder, ControlGroup, AbstractControl, Validators} from 'angular2/common';
+import {FORM_DIRECTIVES, FormBuilder, ControlGroup} from 'angular2/common';
+import {AbstractControl, Validators} from 'angular2/common';
 
 import {CityInformationFactory} from './factories/CityInformationFactory';
 
@@ -59,11 +60,12 @@ export class CityInfoPanel {
 
   /**
    * Submit action handler.
-   * Note that thanks to [(ngModel)] directive we don't need to use value.cityName in handler,
+   * Note that thanks to [(ngModel)] directive
+   * we don't need to use value.cityName in handler,
    * instead we can use this.city directly.
    * @param {object} value
    */
-  onSubmit(value: {[key:string]: string}): void {
+  onSubmit(value: {[key: string]: string}): void {
     console.log ('See what\'s inside submitted value', value);
     console.log ('See what\'s inside this.city', this.city);
 
@@ -84,7 +86,8 @@ export class CityInfoPanel {
    * @returns {boolean}
    */
   isInvalid(control: AbstractControl): boolean {
-    return !control.valid && !control.pending && (control.touched || (!control.touched && control.dirty));
+    return !control.valid && !control.pending &&
+      (control.touched || (!control.touched && control.dirty));
   }
 
   private addCityInformation(cityInformation: CityInformationFactory) {

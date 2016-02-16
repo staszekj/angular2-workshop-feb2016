@@ -5,7 +5,7 @@ import {Injectable} from 'angular2/core';
  * Interface used by all Angular2 validators
  */
 interface ValidationResult {
-  [key:string]:boolean;
+  [key: string]: boolean;
 }
 
 @Injectable ()
@@ -50,7 +50,7 @@ export class CustomValidator {
     return new Promise ((resolve, reject) => {
       setTimeout (() => {
         if (control.value === 'Krakuw') {
-          resolve ({cityDoesNotExist: true})
+          resolve ({cityDoesNotExist: true});
         } else {
           resolve (null);
         }
