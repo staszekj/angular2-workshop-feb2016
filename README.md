@@ -46,5 +46,6 @@ go to [http://localhost:3000](http://localhost:3000) in your browser
 
 <a href="http://workshop.eltrue.com" target="_blank">Working application</a>  
 <br>
-<a href="https://docs.google.com/forms/d/1F5p51L3odByLJFABuBEmI8srDlO-7jND6jX8hOYrarg/viewform?c=0&w=1&usp=mail_form_link" target="_blank">Please fill in survey after workshop</a>
-
+<a href="https://docs.google.com/forms/d/1F5p51L3odByLJFABuBEmI8srDlO-7jND6jX8hOYrarg/viewform?c=0&w=1&usp=mail_form_link" target="_blank">After workshop. Survey</a>
+<br>
+<a href="https://docs.google.com/document/d/1xI-YBoQK9EQnInzbrYWRI3uqQn4OSCEj0tkCqp5A7_g/edit?usp=sharing" target="_blank">After workshop. Links to docs and comments</a>
