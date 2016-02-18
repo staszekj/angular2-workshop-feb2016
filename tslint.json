@@ -6,7 +6,7 @@
     "indent": "spaces",
     "max-line-length": [
       true,
-      100
+      1000
     ],
     "member-ordering": [
       true,
@@ -21,7 +21,7 @@
     "no-empty": false,
     "no-eval": true,
     "no-trailing-comma": true,
-    "no-trailing-whitespace": true,
+    "no-trailing-whitespace": false,
     "no-unused-expression": true,
     "no-unused-variable": false,
     "no-unreachable": true,

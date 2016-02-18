@@ -48,6 +48,18 @@ let sharedJQuery = require ('jquery');
 }
   `],
   template: `
+    <a class="image-popup-vertical-fit" href="http://farm9.staticflickr.com/8241/8589392310_7b6127e243_b.jpg"
+     title="Caption. Can be aligned to any side and contain any HTML.">
+    <img src="http://farm9.staticflickr.com/8241/8589392310_7b6127e243_s.jpg" width="75" height="75">
+  </a>
+  <a class="image-popup-fit-width" href="http://farm9.staticflickr.com/8379/8588290361_ecf8c27021_b.jpg"
+     title="This image fits only horizontally.">
+    <img src="http://farm9.staticflickr.com/8379/8588290361_ecf8c27021_s.jpg" width="75" height="75">
+  </a>
+  <a class="image-popup-no-margins" href="http://farm4.staticflickr.com/3721/9207329484_ba28755ec4_o.jpg">
+    <img src="http://farm4.staticflickr.com/3721/9207329484_ba28755ec4_o.jpg" width="107" height="75">
+  </a>
+
     <header>
       <nav>
         <h1>Hello {{ name }}</h1>
@@ -89,6 +101,12 @@ export class App {
   name = 'Angular 2 Webpack Starter';
   url = 'https://twitter.com/AngularClass';
   constructor() {
+
+  }
+
+  ngOnInit() {
+    console.log ('SJA: element', sharedJQuery ('.image-popup-vertical-fit'));
+    console.log ('SJA: funkcja', sharedJQuery ('.image-popup-vertical-fit').magnificPopup);
 
     sharedJQuery ('.image-popup-vertical-fit').magnificPopup ({
       type: 'image',
