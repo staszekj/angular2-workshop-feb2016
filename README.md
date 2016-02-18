@@ -24,14 +24,15 @@ npm install
 npm run build
 ```
 
-## Run dist directory (see: http://localhost:8080)
+## Run dist directory
 
 ```bash
 # Prepare `dist` directory 
 npm run server:prod
 ```
+Go to: [http://localhost:8080](http://localhost:8080)
 
-## Run dev mode (see: http://localhost:3000)
+## Run dev mode
 
 ```bash
 # start server and watching the code changes
@@ -39,7 +40,7 @@ npm start
 # or
 npm run server:dev
 ```
-
+Go to: [http://localhost:3000](http://localhost:3000)
 
 ## Run tests
 
@@ -48,9 +49,6 @@ npm run server:dev
 npm test
 ```
 
-
-## Go
-go to [http://localhost:3000](http://localhost:3000) in your browser
 
 ## Links
 
