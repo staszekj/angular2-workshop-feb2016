@@ -17,6 +17,17 @@ cd angular2-workshop-feb2016
 npm install
 ```
 
+## Git
+
+```bash
+# remove local changes
+git reset --hard
+
+# switch to branch
+git checkout <master, stage1, stage2, etc>
+```
+
+
 ## Build
 
 ```bash
