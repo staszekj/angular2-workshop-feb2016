@@ -76,6 +76,10 @@ export class App {
   constructor() {
 
   }
+
+  ngOnInit() {
+
+  }
 }
 
 /*
