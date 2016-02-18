@@ -14,10 +14,10 @@ let sharedJQuery = require ('jquery');
  * App Component
  * Top Level Component
  */
-@Component({
+@Component ({
   selector: 'app',
-  providers: [ ...FORM_PROVIDERS ],
-  directives: [ ...ROUTER_DIRECTIVES, RouterActive ],
+  providers: [...FORM_PROVIDERS],
+  directives: [...ROUTER_DIRECTIVES, RouterActive],
   pipes: [],
   styles: [`
     nav ul {
@@ -64,20 +64,25 @@ let sharedJQuery = require ('jquery');
     </footer>
   `
 })
-@RouteConfig([
-  { path: '/', component: Home, name: 'Index' },
-  { path: '/home', component: Home, name: 'Home' },
+@RouteConfig ([
+  {path: '/', component: Home, name: 'Index'},
+  {path: '/home', component: Home, name: 'Home'},
   // Async load a component using Webpack's require with es6-promise-loader
-  { path: '/about', loader: () => require('./about/about')('About'), name: 'About' },
-  { path: '/**', redirectTo: ['Index'] }
+  {path: '/about', loader: () => require ('./about/about') ('About'), name: 'About'},
+  {path: '/**', redirectTo: ['Index']}
 ])
 export class App {
   angularclassLogo = '';
   name = 'Angular 2 Webpack Starter';
   url = 'https://twitter.com/AngularClass';
+
   constructor() {
+  }
+
+  ngOnInit() {
     console.log (sharedJQuery);
   }
+
 }
 
 /*
