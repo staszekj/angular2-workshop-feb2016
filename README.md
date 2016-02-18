@@ -17,19 +17,29 @@ cd angular2-workshop-feb2016
 npm install
 ```
 
-## Run
-
-```bash
-# start server and watching the code changes
-npm start
-```
-
 ## Build
 
 ```bash
 # Prepare `dist` directory 
 npm run build
 ```
+
+## Run dist directory (see: http://localhost:8080)
+
+```bash
+# Prepare `dist` directory 
+npm run server:prod
+```
+
+## Run dev mode (see: http://localhost:3000)
+
+```bash
+# start server and watching the code changes
+npm start
+# or
+npm run server:dev
+```
+
 
 ## Run tests
 
