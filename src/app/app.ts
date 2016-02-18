@@ -105,8 +105,6 @@ export class App {
   }
 
   ngOnInit() {
-    console.log ('SJA: element', sharedJQuery ('.image-popup-vertical-fit'));
-    console.log ('SJA: funkcja', sharedJQuery ('.image-popup-vertical-fit').magnificPopup);
 
     sharedJQuery ('.image-popup-vertical-fit').magnificPopup ({
       type: 'image',
