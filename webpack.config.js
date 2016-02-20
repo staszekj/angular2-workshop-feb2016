@@ -45,7 +45,7 @@ module.exports = {
 
   module: {
     preLoaders: [
-      {test: /\.ts$/, loader: 'tslint-loader', exclude: [root('node_modules')]},
+      //{test: /\.ts$/, loader: 'tslint-loader', exclude: [root('node_modules')]},
       // TODO(gdi2290): `exclude: [ root('node_modules/rxjs') ]` fixed with rxjs 5 beta.2 release
       { test: /\.js$/, loader: "source-map-loader", exclude: [ root('node_modules/rxjs') ] }
     ],
